@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jwxtokenofficial.github.io/sitemap.xml
