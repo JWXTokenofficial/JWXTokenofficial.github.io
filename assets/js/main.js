@@ -28,13 +28,34 @@ if (button && navigation) {
   });
 }
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08 });
+const revealItems = document.querySelectorAll('.section, .stat-card, .article-card');
+document.documentElement.classList.add('motion-ready');
 
-document.querySelectorAll('.section, .stat-card, .article-card').forEach(element => observer.observe(element));
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  revealItems.forEach(element => observer.observe(element));
+} else {
+  revealItems.forEach(element => element.classList.add('is-visible'));
+}
+
+const progress = document.querySelector('.scroll-progress span');
+
+if (progress) {
+  const updateProgress = () => {
+    const available = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = available > 0 ? Math.min(window.scrollY / available, 1) : 0;
+    progress.style.transform = `scaleX(${ratio})`;
+  };
+
+  updateProgress();
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+}

@@ -6,11 +6,13 @@ Zweisprachige statische Website für GitHub Pages. Die veröffentlichte Domain i
 
 ## Seitenstruktur
 
-- `/` – Sprachauswahl und `x-default`
+- `/` – deutsche Standard-Startseite und `x-default`
 - `/de/` – vollständige deutsche Website
 - `/en/` – vollständige englische Website
 - je Sprache: Home, About, Technology, Tokenomics, Roadmap, Team, Insights, fünf Artikel und FAQ
 - `sitemap.xml` und `robots.txt`
+
+Die Sprache wird ohne vorgelagerte Auswahlseite direkt über den Schalter rechts oben gewechselt. Das gemeinsame Interface nutzt ein dunkles, datenorientiertes Dashboard-System mit gelben JWX-Akzenten.
 
 ## Direkt auf GitHub Pages veröffentlichen
 
@@ -34,4 +36,3 @@ Die HTML-Dateien sind bereits generiert. Python ist für die Veröffentlichung n
 - deutsches JWX-Whitepaper v1.0, von der ursprünglichen Website abgerufen am 28.09.2026
 
 Projektangaben zu Partnerschaften, Umlaufmenge, Systemleistung und Roadmap werden nicht als unabhängig bestätigte Tatsachen ausgegeben. Die Originalunterlagen verwenden für das KI-System sowohl „Dream“ als auch „Ultron“; diese uneinheitliche Benennung wird auf der Website transparent erklärt. Vor der Veröffentlichung neuer wirtschaftlicher, rechtlicher oder technischer Aussagen sollten aktuelle Primärnachweise ergänzt werden.
-
